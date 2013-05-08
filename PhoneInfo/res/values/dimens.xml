@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="item_width">300dp</dimen>
+    <dimen name="textSizeDefault">15dp</dimen>
+    <dimen name="textSizeBig">20dp</dimen>
+    <dimen name="textSizeBigger">25dp</dimen>
+    <dimen name="margin_default">10dp</dimen>
+    <dimen name="margin_dynamic_side">30dp</dimen>
+    <dimen name="margin_dynamic_bottom">10dp</dimen>
+    <dimen name="margin_button_bottom">15dp</dimen>
+    <dimen name="button_width">200dp</dimen>
+    <dimen name="main_top_margin">11dip</dimen>
+    <dimen name="subtitle_font_size">17sp</dimen>
+    <dimen name="screen_description_font_size">17sp</dimen>
+    <dimen name="checkbox_width">200dp</dimen>
+    <dimen name="checkbox_margin">50dp</dimen>
+    <dimen name="bottom_button_height">42dp</dimen>
+    <dimen name="button_text_size">17sp</dimen>
+    <dimen name="custom_title_height">56dp</dimen>
+    <dimen name="custom_title_margin_left">16dp</dimen>
+    <dimen name="custom_title_margin_right">16dp</dimen>
+    <dimen name="custom_title_appname_margin_left">8dp</dimen>
+    <dimen name="custom_title_heading_font_size">19sp</dimen>
+    <dimen name="step_indicator_font_size">17sp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="margin_box_all">5dp</dimen>
+    <dimen name="name_width">100dp</dimen>
+
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">JSONParser</string>
+    <string name="title_activity_testcase_view">JSONP Viewer</string>
+    <string name="title_activity_testcase_parse">JSONP Parser</string>
+    <string name="view_test_case">First, select mode, and then click test case.</string>
+    <string name="parse">Parse</string>
+    <string name="view">View</string>
+    <string name="do_it">Do it!</string>
+    <string name="viewer">Viewer</string>
+    <string name="enter_url_for_json_file">Enter URL for JSON file</string>
+    <string name="next">Next</string>
+    <string name="app_title">Setup Wizard</string>
+    <string name="setupwizardicon">SetupWizardIcon</string>
+    <string name="title_activity_info">PhoneInfo</string>
+
+</resources>
