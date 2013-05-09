@@ -33,7 +33,7 @@
     <string name="sim_state">SIM 상태</string>
     <string name="sim_serial_number">SIM 시리얼 번호</string>
     <string name="sim_operator">SIM 사업자</string>
-    <string name="sim_operator_name">Sim 사업자명</string>
+    <string name="sim_operator_name">SIM 사업자명</string>
     <string name="voicemail_alpha_tag">음성메일 알파 태그</string>
     <string name="voicemail_number">음성메일 번호</string>
     <string name="connectivity">연결상태</string>
