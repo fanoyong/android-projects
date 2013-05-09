@@ -3,8 +3,5 @@
 
     <color name="textColorDefault">#FFFFFF</color>
     <color name="text_color">#ffffff</color>
-    <color name="button_text_color">#ffffff</color>
-    <color name="custom_title_text_color">#ebebeb</color>
-    <color name="step_indicator_text_color">#adc1d6</color>
 
 </resources>
