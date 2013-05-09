@@ -10,6 +10,7 @@
     <dimen name="subtitle_font_size">17sp</dimen>
     <dimen name="screen_description_font_size">17sp</dimen>
     <dimen name="margin_box_all">5dp</dimen>
+    <dimen name="margin_box_top">15dp</dimen>
     <dimen name="name_width">120dp</dimen>
 
 </resources>

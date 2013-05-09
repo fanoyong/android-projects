@@ -36,10 +36,10 @@ public class InfoActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
         LinearLayout infoContainer = (LinearLayout) this.findViewById(R.id.InfoContainer);
-        page = new LinearLayout(this);
+        this.page = new LinearLayout(this);
         getInfo();
         infoContainer.removeAllViews();
-        infoContainer.addView(page);
+        infoContainer.addView(this.page);
     }
 
     @Override
@@ -56,7 +56,7 @@ public class InfoActivity extends Activity {
                 infoContainer.invalidate();
                 getInfo();
                 infoContainer.removeAllViews();
-                infoContainer.addView(page);
+                infoContainer.addView(this.page);
                 break;
             default:
                 break;
@@ -65,8 +65,8 @@ public class InfoActivity extends Activity {
     }
 
     private void getInfo() {
-        page.removeAllViews();
-        page.setOrientation(LinearLayout.VERTICAL);
+        this.page.removeAllViews();
+        this.page.setOrientation(LinearLayout.VERTICAL);
 
         infoCPU();
         infoKernel();
@@ -84,48 +84,52 @@ public class InfoActivity extends Activity {
         activityManager.getMemoryInfo(mi);
 
         View child = null;
-        page.addView(createHeader(getString(R.string.memory)));
+        this.page.addView(createHeader(getString(R.string.memory)));
 
         long totalMem = mi.totalMem;
+        int MB = 1024 * 1024;
         if (totalMem > 0) {
-            child = createLine(getString(R.string.total_memory), String.valueOf(totalMem / (1024 * 1024)) + " MB");
+            child = createLine(getString(R.string.total_memory), String.valueOf(totalMem / MB)
+                    + " MB");
             if (child != null) {
-                page.addView(child);
+                this.page.addView(child);
             }
         }
         long availMem = mi.availMem;
         if (availMem > 0) {
-            child = createLine(getString(R.string.available_memory), String.valueOf(availMem / (1024 * 1024)) + " MB");
+            child = createLine(getString(R.string.available_memory), String.valueOf(availMem / MB)
+                    + " MB");
             if (child != null) {
-                page.addView(child);
+                this.page.addView(child);
             }
         }
         long threshold = mi.threshold;
         if (threshold > 0) {
-            child = createLine(getString(R.string.low_memory_threshold), String.valueOf(threshold / (1024 * 1024)) + " MB");
+            child = createLine(getString(R.string.low_memory_threshold),
+                    String.valueOf(threshold / MB) + " MB");
             if (child != null) {
-                page.addView(child);
+                this.page.addView(child);
             }
         }
     }
 
     private void infoTelephony() {
         View child = null;
-        page.addView(createHeader(getString(R.string.telephoney)));
+        this.page.addView(createHeader(getString(R.string.telephoney)));
         TelephonyManager tm = (TelephonyManager) this.getSystemService(TELEPHONY_SERVICE);
 
         String deviceswver = tm.getDeviceSoftwareVersion();
         if (deviceswver != null) {
             child = createLine(getString(R.string.device_sw_version), deviceswver);
             if (child != null) {
-                page.addView(child);
+                this.page.addView(child);
             }
         }
         String deviceid = tm.getDeviceId();
         if (deviceid != null) {
             child = createLine(getString(R.string.device_id), deviceid);
             if (child != null) {
-                page.addView(child);
+                this.page.addView(child);
             }
         }
         int dataactivity = tm.getDataActivity();
@@ -151,7 +155,7 @@ public class InfoActivity extends Activity {
         if (temp != null) {
             child = createLine(getString(R.string.data_activity), temp);
             if (child != null) {
-                page.addView(child);
+                this.page.addView(child);
             }
         }
         int datastate = tm.getDataState();
@@ -174,7 +178,7 @@ public class InfoActivity extends Activity {
         if (temp != null) {
             child = createLine(getString(R.string.data_state), temp);
             if (child != null) {
-                page.addView(child);
+                this.page.addView(child);
             }
         }
         int phonetype = tm.getPhoneType();
@@ -197,7 +201,7 @@ public class InfoActivity extends Activity {
         if (temp != null) {
             child = createLine(getString(R.string.phone_type), temp);
             if (child != null) {
-                page.addView(child);
+                this.page.addView(child);
             }
         }
         int networktype = tm.getNetworkType();
@@ -257,21 +261,21 @@ public class InfoActivity extends Activity {
         if (temp != null) {
             child = createLine(getString(R.string.network_type), temp);
             if (child != null) {
-                page.addView(child);
+                this.page.addView(child);
             }
         }
         String netop = tm.getNetworkOperator();
         if (netop != null) {
             child = createLine(getString(R.string.network_operator), netop);
             if (child != null) {
-                page.addView(child);
+                this.page.addView(child);
             }
         }
         String netopname = tm.getNetworkOperatorName();
         if (netopname != null) {
             child = createLine(getString(R.string.network_operator_name), netopname);
             if (child != null) {
-                page.addView(child);
+                this.page.addView(child);
             }
         }
 
@@ -279,14 +283,14 @@ public class InfoActivity extends Activity {
         if (netcountryiso != null) {
             child = createLine(getString(R.string.network_country_iso), netcountryiso);
             if (child != null) {
-                page.addView(child);
+                this.page.addView(child);
             }
         }
         String subscriberid = tm.getSubscriberId();
         if (subscriberid != null) {
             child = createLine(getString(R.string.subscriber_id), subscriberid);
             if (child != null) {
-                page.addView(child);
+                this.page.addView(child);
             }
         }
 
@@ -708,9 +712,10 @@ public class InfoActivity extends Activity {
         LinearLayout child = new LinearLayout(this);
         child.setGravity(Gravity.CENTER);
 
-        LayoutParams params = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-        int bottom = (int) this.getResources().getDimension(R.dimen.margin_box_all) * 3;
-        int top = (int) this.getResources().getDimension(R.dimen.margin_box_all) * 3;
+        LayoutParams params = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT,
+                LayoutParams.WRAP_CONTENT);
+        int bottom = (int) this.getResources().getDimension(R.dimen.margin_box_top);
+        int top = (int) this.getResources().getDimension(R.dimen.margin_box_top);
         int right = (int) this.getResources().getDimension(R.dimen.margin_box_all);
         int left = (int) this.getResources().getDimension(R.dimen.margin_box_all);
         params.setMargins(left, top, right, bottom);
@@ -728,7 +733,8 @@ public class InfoActivity extends Activity {
         LinearLayout child = new LinearLayout(this);
         // child.setGravity(Gravity.CENTER);
 
-        LayoutParams params = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+        LayoutParams params = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT,
+                LayoutParams.WRAP_CONTENT);
         int bottom = (int) this.getResources().getDimension(R.dimen.margin_box_all);
         int top = (int) this.getResources().getDimension(R.dimen.margin_box_all);
         int right = (int) this.getResources().getDimension(R.dimen.margin_box_all);
