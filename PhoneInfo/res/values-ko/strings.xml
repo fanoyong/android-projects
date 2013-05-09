@@ -57,7 +57,7 @@
     <string name="scaled_density">보정된 밀도</string>
     <string name="xdpi">X축 DPI</string>
     <string name="ydpi">Y축 DPI</string>
-    <string name="kernel">값커널</string>
+    <string name="kernel">커널</string>
     <string name="bootloader">부트로더</string>
     <string name="display_version">디스플레이 버젼</string>
     <string name="fingerprint">고유 핑거프린트값</string>
