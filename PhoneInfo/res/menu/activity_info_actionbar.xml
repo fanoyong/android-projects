@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/menu_refresh"
+        android:checkable="true"
+        android:enabled="true"
+        android:icon="@drawable/ic_action_refresh"
+        android:onClick="refreshContents"
+        android:showAsAction="ifRoom|withText"
+        android:title="@string/refresh"
+        android:visible="true"/>
+
+</menu>

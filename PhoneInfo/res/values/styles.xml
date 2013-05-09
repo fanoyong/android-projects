@@ -1,6 +1,9 @@
-<resources xmlns:android="http://schemas.android.com/apk/res/android">
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="default_theme" parent="@android:style/Theme.DeviceDefault" />
+    <style name="default_base_theme" parent="android:Theme.Holo" />
+
+    <style name="default_theme" parent="default_base_theme" />
 
     <style name="container">
         <item name="android:gravity">center</item>
@@ -17,7 +20,7 @@
     </style>
 
     <style name="textView.Cap">
-        <item name="android:textAllCaps">true</item>
+        <item name="android:textAllCaps" tools:targetApi="14">true</item>
     </style>
 
     <style name="textView.Big">
@@ -25,7 +28,7 @@
     </style>
 
     <style name="textView.Big.Cap">
-        <item name="android:textAllCaps">true</item>
+        <item name="android:textAllCaps" tools:targetApi="14">true</item>
     </style>
 
     <style name="textView.Bigger">
@@ -33,7 +36,7 @@
     </style>
 
     <style name="textView.Bigger.Cap">
-        <item name="android:textAllCaps">true</item>
+        <item name="android:textAllCaps" tools:targetApi="14">true</item>
     </style>
 
     <style name="dynamic">

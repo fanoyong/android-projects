@@ -3,16 +3,23 @@ package com.fanoyong.phoneinfo.ui;
 
 import java.util.List;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.ActivityManager;
+import android.app.ActivityManager.MemoryInfo;
 import android.graphics.Color;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Build;
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
@@ -21,7 +28,7 @@ import android.widget.TextView;
 import com.fanoyong.phoneinfo.R;
 
 public class InfoActivity extends Activity {
-    LinearLayout page;
+    private LinearLayout page;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,16 +39,71 @@ public class InfoActivity extends Activity {
         infoContainer.addView(page);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.activity_info_actionbar, menu);
+        return true;
+    }
+
+    public void refreshContents(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.menu.activity_info_actionbar:
+                LinearLayout infoContainer = (LinearLayout) this.findViewById(R.id.InfoContainer);
+                getInfo();
+                infoContainer.removeAllViews();
+                infoContainer.addView(page);
+                break;
+            default:
+                break;
+        }
+
+    }
+
     private void getInfo() {
         page = new LinearLayout(this);
+        page.removeAllViews();
         page.setOrientation(LinearLayout.VERTICAL);
 
         infoCPU();
         infoKernel();
+        infoMemory();
         infoDisplay();
         infoSensors();
         infoConnectivity();
         infoTelephony();
+    }
+
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
+    private void infoMemory() {
+        MemoryInfo mi = new MemoryInfo();
+        ActivityManager activityManager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
+        activityManager.getMemoryInfo(mi);
+
+        View child = null;
+        page.addView(createHeader(getString(R.string.memory)));
+
+        long totalMem = mi.totalMem;
+        if (totalMem > 0) {
+            child = createLine(getString(R.string.total_memory), String.valueOf(totalMem / (1024 * 1024)) + " MB");
+            if (child != null) {
+                page.addView(child);
+            }
+        }
+        long availMem = mi.availMem;
+        if (availMem > 0) {
+            child = createLine(getString(R.string.available_memory), String.valueOf(availMem / (1024 * 1024)) + " MB");
+            if (child != null) {
+                page.addView(child);
+            }
+        }
+        long threshold = mi.threshold;
+        if (threshold > 0) {
+            child = createLine(getString(R.string.low_memory_threshold), String.valueOf(threshold / (1024 * 1024)) + " MB");
+            if (child != null) {
+                page.addView(child);
+            }
+        }
     }
 
     private void infoTelephony() {
@@ -450,6 +512,7 @@ public class InfoActivity extends Activity {
         }
     }
 
+    @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
     private void infoKernel() {
         View child = null;
         page.addView(createHeader(getString(R.string.kernel)));
@@ -641,9 +704,10 @@ public class InfoActivity extends Activity {
     private View createHeader(String string) {
         LinearLayout child = new LinearLayout(this);
         child.setGravity(Gravity.CENTER);
+
         LayoutParams params = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-        int bottom = (int) this.getResources().getDimension(R.dimen.margin_box_all) * 2;
-        int top = (int) this.getResources().getDimension(R.dimen.margin_box_all) * 2;
+        int bottom = (int) this.getResources().getDimension(R.dimen.margin_box_all) * 3;
+        int top = (int) this.getResources().getDimension(R.dimen.margin_box_all) * 3;
         int right = (int) this.getResources().getDimension(R.dimen.margin_box_all);
         int left = (int) this.getResources().getDimension(R.dimen.margin_box_all);
         params.setMargins(left, top, right, bottom);
@@ -659,13 +723,14 @@ public class InfoActivity extends Activity {
     private View createLine(String name, String content) {
         LinearLayout child = new LinearLayout(this);
         // child.setGravity(Gravity.CENTER);
+
         LayoutParams params = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
         int bottom = (int) this.getResources().getDimension(R.dimen.margin_box_all);
         int top = (int) this.getResources().getDimension(R.dimen.margin_box_all);
         int right = (int) this.getResources().getDimension(R.dimen.margin_box_all);
         int left = (int) this.getResources().getDimension(R.dimen.margin_box_all);
-
         params.setMargins(left, top, right, bottom);
+
         TextView tv1 = new TextView(this);
         tv1.setText(name);
         tv1.setTextAppearance(this, R.style.textView_Cap);
@@ -675,6 +740,7 @@ public class InfoActivity extends Activity {
         TextView tv2 = new TextView(this);
         tv2.setText(content);
         tv2.setTextAppearance(this, R.style.textView);
+        tv2.setSelected(true);
         // tv2.setGravity(Gravity.CENTER);
         child.addView(tv1, params);
         child.addView(tv2, params);

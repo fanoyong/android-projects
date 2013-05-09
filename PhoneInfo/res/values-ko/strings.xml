@@ -57,7 +57,7 @@
     <string name="scaled_density">보정된 밀도</string>
     <string name="xdpi">X축 DPI</string>
     <string name="ydpi">Y축 DPI</string>
-    <string name="kernel">커널</string>
+    <string name="kernel">값커널</string>
     <string name="bootloader">부트로더</string>
     <string name="display_version">디스플레이 버젼</string>
     <string name="fingerprint">고유 핑거프린트값</string>
@@ -80,5 +80,10 @@
     <string name="device_name">디바이스명</string>
     <string name="product_name">프로덕트명</string>
     <string name="brand">브랜드</string>
+    <string name="memory">메모리</string>
+    <string name="total_memory">총 메모리</string>
+    <string name="available_memory">가용 메모리</string>
+    <string name="low_memory_threshold">로우메모리 임계</string>
+    <string name="refresh">새로고침</string>
 
 </resources>

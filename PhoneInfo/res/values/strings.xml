@@ -104,5 +104,10 @@
     <string name="device_name">Device Name</string>
     <string name="product_name">Product Name</string>
     <string name="brand">Brand</string>
+    <string name="memory">Memory</string>
+    <string name="total_memory">Total Memory</string>
+    <string name="available_memory">Available Memory</string>
+    <string name="low_memory_threshold">Low Memory Threshold</string>
+    <string name="refresh">Refresh</string>
 
 </resources>
