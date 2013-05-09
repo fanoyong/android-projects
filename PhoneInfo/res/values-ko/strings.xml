@@ -83,7 +83,7 @@
     <string name="memory">메모리</string>
     <string name="total_memory">총 메모리</string>
     <string name="available_memory">가용 메모리</string>
-    <string name="low_memory_threshold">로우메모리 임계</string>
+    <string name="low_memry_threshold">로우메모리 임계</string>
     <string name="refresh">새로고침</string>
 
 </resources>

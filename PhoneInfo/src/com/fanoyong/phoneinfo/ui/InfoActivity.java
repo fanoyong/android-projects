@@ -3,6 +3,7 @@ package com.fanoyong.phoneinfo.ui;
 
 import java.util.List;
 
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.ActivityManager;
@@ -35,7 +36,9 @@ public class InfoActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
         LinearLayout infoContainer = (LinearLayout) this.findViewById(R.id.InfoContainer);
+        page = new LinearLayout(this);
         getInfo();
+        infoContainer.removeAllViews();
         infoContainer.addView(page);
     }
 
@@ -50,6 +53,7 @@ public class InfoActivity extends Activity {
         switch (item.getItemId()) {
             case R.menu.activity_info_actionbar:
                 LinearLayout infoContainer = (LinearLayout) this.findViewById(R.id.InfoContainer);
+                infoContainer.invalidate();
                 getInfo();
                 infoContainer.removeAllViews();
                 infoContainer.addView(page);
@@ -61,7 +65,6 @@ public class InfoActivity extends Activity {
     }
 
     private void getInfo() {
-        page = new LinearLayout(this);
         page.removeAllViews();
         page.setOrientation(LinearLayout.VERTICAL);
 
@@ -720,6 +723,7 @@ public class InfoActivity extends Activity {
 
     }
 
+    @SuppressLint("NewApi")
     private View createLine(String name, String content) {
         LinearLayout child = new LinearLayout(this);
         // child.setGravity(Gravity.CENTER);
@@ -740,7 +744,9 @@ public class InfoActivity extends Activity {
         TextView tv2 = new TextView(this);
         tv2.setText(content);
         tv2.setTextAppearance(this, R.style.textView);
-        tv2.setSelected(true);
+        if (android.os.Build.VERSION.SDK_INT > Build.VERSION_CODES.HONEYCOMB) {
+            tv2.setTextIsSelectable(true);
+        }
         // tv2.setGravity(Gravity.CENTER);
         child.addView(tv1, params);
         child.addView(tv2, params);
