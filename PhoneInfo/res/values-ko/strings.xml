@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="telephoney">Telephoney</string>
+    <string name="app_name">폰정보</string>
+    <string name="title_activity_info">폰정보</string>
+    <string name="telephoney">전화정보</string>
     <string name="device_sw_version">디바이스 SW 버젼</string>
     <string name="device_id">디바이스 ID</string>
     <string name="dormant">휴면상태</string>
@@ -46,7 +48,7 @@
     <string name="mindelay">최소딜레이값</string>
     <string name="maxrange">최대범위</string>
     <string name="resolution">해상도</string>
-    <string name="sensors">센서들</string>
+    <string name="sensors">센서</string>
     <string name="display">디스플레이</string>
     <string name="width">너비</string>
     <string name="height">높이</string>
