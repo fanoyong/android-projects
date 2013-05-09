@@ -46,19 +46,19 @@ public class InfoActivity extends Activity {
 
     private void infoTelephony() {
         View child = null;
-        page.addView(createHeader("Telephoney"));
+        page.addView(createHeader(getString(R.string.telephoney)));
         TelephonyManager tm = (TelephonyManager) this.getSystemService(TELEPHONY_SERVICE);
 
         String deviceswver = tm.getDeviceSoftwareVersion();
         if (deviceswver != null) {
-            child = createLine("Device SW Version", deviceswver);
+            child = createLine(getString(R.string.device_sw_version), deviceswver);
             if (child != null) {
                 page.addView(child);
             }
         }
         String deviceid = tm.getDeviceId();
         if (deviceid != null) {
-            child = createLine("Device ID", deviceid);
+            child = createLine(getString(R.string.device_id), deviceid);
             if (child != null) {
                 page.addView(child);
             }
@@ -67,24 +67,24 @@ public class InfoActivity extends Activity {
         String temp = null;
         switch (dataactivity) {
             case TelephonyManager.DATA_ACTIVITY_DORMANT:
-                temp = "Dormant";
+                temp = getString(R.string.dormant);
                 break;
             case TelephonyManager.DATA_ACTIVITY_IN:
-                temp = "In";
+                temp = getString(R.string.in);
                 break;
             case TelephonyManager.DATA_ACTIVITY_INOUT:
-                temp = "In / Out";
+                temp = getString(R.string.in_out);
                 break;
             case TelephonyManager.DATA_ACTIVITY_NONE:
-                temp = "None";
+                temp = getString(R.string.none);
                 break;
             case TelephonyManager.DATA_ACTIVITY_OUT:
-                temp = "Out";
+                temp = getString(R.string.out);
                 break;
             default:
         }
         if (temp != null) {
-            child = createLine("Data Activity", temp);
+            child = createLine(getString(R.string.data_activity), temp);
             if (child != null) {
                 page.addView(child);
             }
@@ -93,21 +93,21 @@ public class InfoActivity extends Activity {
         temp = null;
         switch (datastate) {
             case TelephonyManager.DATA_CONNECTED:
-                temp = "Connected";
+                temp = getString(R.string.connected);
                 break;
             case TelephonyManager.DATA_CONNECTING:
-                temp = "Connecting";
+                temp = getString(R.string.connecting);
                 break;
             case TelephonyManager.DATA_DISCONNECTED:
-                temp = "Disconnected";
+                temp = getString(R.string.disconnected);
                 break;
             case TelephonyManager.DATA_SUSPENDED:
-                temp = "Suspended";
+                temp = getString(R.string.suspended);
                 break;
             default:
         }
         if (temp != null) {
-            child = createLine("Data State", temp);
+            child = createLine(getString(R.string.data_state), temp);
             if (child != null) {
                 page.addView(child);
             }
@@ -116,21 +116,21 @@ public class InfoActivity extends Activity {
         temp = null;
         switch (phonetype) {
             case TelephonyManager.PHONE_TYPE_CDMA:
-                temp = "CDMA";
+                temp = getString(R.string.cdma);
                 break;
             case TelephonyManager.PHONE_TYPE_GSM:
-                temp = "GSM";
+                temp = getString(R.string.gsm);
                 break;
             case TelephonyManager.PHONE_TYPE_SIP:
-                temp = "SIP";
+                temp = getString(R.string.sip);
                 break;
             case TelephonyManager.PHONE_TYPE_NONE:
-                temp = "None";
+                temp = getString(R.string.none);
                 break;
             default:
         }
         if (temp != null) {
-            child = createLine("Phone type", temp);
+            child = createLine(getString(R.string.phone_type), temp);
             if (child != null) {
                 page.addView(child);
             }
@@ -139,72 +139,72 @@ public class InfoActivity extends Activity {
         temp = null;
         switch (networktype) {
             case TelephonyManager.NETWORK_TYPE_1xRTT:
-                temp = "1xRTT";
+                temp = getString(R.string._1xrtt);
                 break;
             case TelephonyManager.NETWORK_TYPE_CDMA:
-                temp = "CDMA";
+                temp = getString(R.string.cdma);
                 break;
             case TelephonyManager.NETWORK_TYPE_EDGE:
-                temp = "EDGE";
+                temp = getString(R.string.edge);
                 break;
             case TelephonyManager.NETWORK_TYPE_EHRPD:
-                temp = "eHRPD";
+                temp = getString(R.string.ehrpd);
                 break;
             case TelephonyManager.NETWORK_TYPE_EVDO_0:
-                temp = "EVDO 0";
+                temp = getString(R.string.evdo_0);
                 break;
             case TelephonyManager.NETWORK_TYPE_EVDO_A:
-                temp = "EVDO A";
+                temp = getString(R.string.evdo_a);
                 break;
             case TelephonyManager.NETWORK_TYPE_EVDO_B:
-                temp = "EVDO B";
+                temp = getString(R.string.evdo_b);
                 break;
             case TelephonyManager.NETWORK_TYPE_GPRS:
-                temp = "GPRS";
+                temp = getString(R.string.gprs);
                 break;
             case TelephonyManager.NETWORK_TYPE_HSDPA:
-                temp = "HSDPA";
+                temp = getString(R.string.hsdpa);
                 break;
             case TelephonyManager.NETWORK_TYPE_HSPA:
-                temp = "HSPA";
+                temp = getString(R.string.hspa);
                 break;
             case TelephonyManager.NETWORK_TYPE_HSPAP:
-                temp = "HSPAP";
+                temp = getString(R.string.hspap);
                 break;
             case TelephonyManager.NETWORK_TYPE_HSUPA:
-                temp = "HSUPA";
+                temp = getString(R.string.hsupa);
                 break;
             case TelephonyManager.NETWORK_TYPE_IDEN:
-                temp = "IDEN";
+                temp = getString(R.string.iden);
                 break;
             case TelephonyManager.NETWORK_TYPE_LTE:
-                temp = "LTE";
+                temp = getString(R.string.lte);
                 break;
             case TelephonyManager.NETWORK_TYPE_UMTS:
-                temp = "UMTS";
+                temp = getString(R.string.umts);
                 break;
             case TelephonyManager.NETWORK_TYPE_UNKNOWN:
-                temp = "Unknown";
+                temp = getString(R.string.unknown);
                 break;
 
             default:
         }
         if (temp != null) {
-            child = createLine("Network type", temp);
+            child = createLine(getString(R.string.network_type), temp);
             if (child != null) {
                 page.addView(child);
             }
         }
         String netop = tm.getNetworkOperator();
         if (netop != null) {
-            child = createLine("Network Operator", netop);
+            child = createLine(getString(R.string.network_operator), netop);
             if (child != null) {
                 page.addView(child);
             }
         }
         String netopname = tm.getNetworkOperatorName();
         if (netopname != null) {
-            child = createLine("Network Operator Name", netopname);
+            child = createLine(getString(R.string.network_operator_name), netopname);
             if (child != null) {
                 page.addView(child);
             }
@@ -212,14 +212,14 @@ public class InfoActivity extends Activity {
 
         String netcountryiso = tm.getNetworkCountryIso();
         if (netcountryiso != null) {
-            child = createLine("Network country ISO", netcountryiso);
+            child = createLine(getString(R.string.network_country_iso), netcountryiso);
             if (child != null) {
                 page.addView(child);
             }
         }
         String subscriberid = tm.getSubscriberId();
         if (subscriberid != null) {
-            child = createLine("Subscriber ID", subscriberid);
+            child = createLine(getString(R.string.subscriber_id), subscriberid);
             if (child != null) {
                 page.addView(child);
             }
@@ -227,7 +227,7 @@ public class InfoActivity extends Activity {
 
         String simcountryiso = tm.getSimCountryIso();
         if (simcountryiso != null) {
-            child = createLine("SIM Country ISO", simcountryiso);
+            child = createLine(getString(R.string.sim_country_iso), simcountryiso);
             if (child != null) {
                 page.addView(child);
             }
@@ -236,63 +236,63 @@ public class InfoActivity extends Activity {
         temp = null;
         switch (simstate) {
             case TelephonyManager.SIM_STATE_ABSENT:
-                temp = "State Absent";
+                temp = getString(R.string.state_absent);
                 break;
             case TelephonyManager.SIM_STATE_NETWORK_LOCKED:
-                temp = "Network Locked";
+                temp = getString(R.string.network_locked);
                 break;
             case TelephonyManager.SIM_STATE_PIN_REQUIRED:
-                temp = "PIN Required";
+                temp = getString(R.string.pin_required);
                 break;
             case TelephonyManager.SIM_STATE_PUK_REQUIRED:
-                temp = "PUK Required";
+                temp = getString(R.string.puk_required);
                 break;
             case TelephonyManager.SIM_STATE_READY:
-                temp = "Ready";
+                temp = getString(R.string.ready);
                 break;
             case TelephonyManager.SIM_STATE_UNKNOWN:
-                temp = "Unknown";
+                temp = getString(R.string.unknown);
                 break;
 
             default:
         }
         if (temp != null) {
-            child = createLine("SIM State", temp);
+            child = createLine(getString(R.string.sim_state), temp);
             if (child != null) {
                 page.addView(child);
             }
         }
         String simserial = tm.getSimSerialNumber();
         if (simserial != null) {
-            child = createLine("SIM Serial Number", simserial);
+            child = createLine(getString(R.string.sim_serial_number), simserial);
             if (child != null) {
                 page.addView(child);
             }
         }
         String simop = tm.getSimOperator();
         if (simop != null) {
-            child = createLine("SIM Operator", simop);
+            child = createLine(getString(R.string.sim_operator), simop);
             if (child != null) {
                 page.addView(child);
             }
         }
         String simopname = tm.getSimOperatorName();
         if (simopname != null) {
-            child = createLine("Sim Operator name", simopname);
+            child = createLine(getString(R.string.sim_operator_name), simopname);
             if (child != null) {
                 page.addView(child);
             }
         }
         String vmalphatag = tm.getVoiceMailAlphaTag();
         if (vmalphatag != null) {
-            child = createLine("VoiceMail Alpha TAG", vmalphatag);
+            child = createLine(getString(R.string.voicemail_alpha_tag), vmalphatag);
             if (child != null) {
                 page.addView(child);
             }
         }
         String vmnumber = tm.getVoiceMailNumber();
         if (vmnumber != null) {
-            child = createLine("VoiceMail Number", vmnumber);
+            child = createLine(getString(R.string.voicemail_number), vmnumber);
             if (child != null) {
                 page.addView(child);
             }
@@ -301,16 +301,40 @@ public class InfoActivity extends Activity {
 
     private void infoConnectivity() {
         View child = null;
-        page.addView(createHeader("Connectivity"));
+        page.addView(createHeader(getString(R.string.connectivity)));
         ConnectivityManager cm = (ConnectivityManager) this.getSystemService(CONNECTIVITY_SERVICE);
         NetworkInfo[] networkInfo = cm.getAllNetworkInfo();
         StringBuilder sb = new StringBuilder();
         for (NetworkInfo network : networkInfo) {
             sb.setLength(0);
-            sb.append("Subtype: " + network.getSubtypeName() + " ");
-            sb.append("State: " + network.getDetailedState().toString() + " ");
-            sb.append("Reason: " + network.getReason() + " ");
-            sb.append("ExtraInfo: " + network.getExtraInfo() + " ");
+            String connectivitydata = null;
+            connectivitydata = network.getSubtypeName();
+            if (connectivitydata != null) {
+                sb.append(getString(R.string.subtype) + ": " + connectivitydata + ", ");
+            } else {
+                sb.append(getString(R.string.subtype) + ": " + getString(R.string.unknown) + ", ");
+            }
+
+            connectivitydata = network.getDetailedState().toString();
+            if (connectivitydata != null) {
+                sb.append(getString(R.string.state) + ": " + connectivitydata + ", ");
+            } else {
+                sb.append(getString(R.string.state) + ": " + getString(R.string.unknown) + ", ");
+            }
+
+            connectivitydata = network.getReason();
+            if (connectivitydata != null) {
+                sb.append(getString(R.string.reason) + ": " + connectivitydata + ", ");
+            } else {
+                sb.append(getString(R.string.reason) + ": " + getString(R.string.unknown) + ", ");
+            }
+
+            connectivitydata = network.getExtraInfo();
+            if (connectivitydata != null) {
+                sb.append(getString(R.string.extrainfo) + ": " + connectivitydata);
+            } else {
+                sb.append(getString(R.string.extrainfo) + ": " + getString(R.string.unknown));
+            }
 
             child = createLine(network.getTypeName(), sb.toString());
             if (child != null) {
@@ -321,19 +345,19 @@ public class InfoActivity extends Activity {
 
     private void infoSensors() {
         View child = null;
-        page.addView(createHeader("Sensors"));
+        page.addView(createHeader(getString(R.string.sensors)));
         SensorManager sm = (SensorManager) this.getSystemService(SENSOR_SERVICE);
         List<Sensor> sensors = sm.getSensorList(Sensor.TYPE_ALL);
         StringBuilder sb = new StringBuilder();
         for (Sensor sensor : sensors) {
             sb.setLength(0);
-            sb.append("Type: " + sensor.getType() + " ");
-            sb.append("Version: " + sensor.getVersion() + " ");
-            sb.append("Vendor: " + sensor.getVendor() + " ");
-            sb.append("Power: " + sensor.getPower() + " ");
-            sb.append("MinDelay: " + sensor.getMinDelay() + " ");
-            sb.append("MaxRange: " + sensor.getMaximumRange() + " ");
-            sb.append("Resolution: " + sensor.getResolution());
+            sb.append(getString(R.string.type) + ": " + sensor.getType() + ", ");
+            sb.append(getString(R.string.version) + ": " + sensor.getVersion() + ", ");
+            sb.append(getString(R.string.vendor) + ": " + sensor.getVendor() + ", ");
+            sb.append(getString(R.string.power) + ": " + sensor.getPower() + ", ");
+            sb.append(getString(R.string.mindelay) + ": " + sensor.getMinDelay() + ", ");
+            sb.append(getString(R.string.maxrange) + ": " + sensor.getMaximumRange() + ", ");
+            sb.append(getString(R.string.resolution) + ": " + sensor.getResolution());
             child = createLine(sensor.getName(), sb.toString());
             if (child != null) {
                 page.addView(child);
@@ -343,61 +367,61 @@ public class InfoActivity extends Activity {
 
     private void infoDisplay() {
         View child = null;
-        page.addView(createHeader("Display"));
+        page.addView(createHeader(getString(R.string.display)));
         int width = this.getResources().getDisplayMetrics().widthPixels;
         if (width > 0) {
-            child = createLine("Width", String.valueOf(width));
+            child = createLine(getString(R.string.width), String.valueOf(width));
             if (child != null) {
                 page.addView(child);
             }
         }
         int height = this.getResources().getDisplayMetrics().heightPixels;
         if (height > 0) {
-            child = createLine("Height", String.valueOf(height));
+            child = createLine(getString(R.string.height), String.valueOf(height));
             if (child != null) {
                 page.addView(child);
             }
         }
         float density = this.getResources().getDisplayMetrics().density;
         if (density > 0) {
-            child = createLine("Density", String.valueOf(density));
+            child = createLine(getString(R.string.density), String.valueOf(density));
             if (child != null) {
                 page.addView(child);
             }
         }
         float densitydpi = this.getResources().getDisplayMetrics().densityDpi;
         if (densitydpi > 0) {
-            child = createLine("Density DPI", String.valueOf(densitydpi));
+            child = createLine(getString(R.string.density_dpi), String.valueOf(densitydpi));
             if (child != null) {
                 page.addView(child);
             }
             if (densitydpi >= DisplayMetrics.DENSITY_XXHIGH) {
-                child = createLine("Density DPI", "xxhdpi");
+                child = createLine(getString(R.string.density_dpi), getString(R.string.xxhdpi));
                 if (child != null) {
                     page.addView(child);
                 }
             } else if (densitydpi >= DisplayMetrics.DENSITY_XHIGH) {
-                child = createLine("Density DPI", "xhdpi");
+                child = createLine(getString(R.string.density_dpi), getString(R.string.xhdpi));
                 if (child != null) {
                     page.addView(child);
                 }
             } else if (densitydpi >= DisplayMetrics.DENSITY_HIGH) {
-                child = createLine("Density DPI", "hdpi");
+                child = createLine(getString(R.string.density_dpi), getString(R.string.hdpi));
                 if (child != null) {
                     page.addView(child);
                 }
             } else if (densitydpi >= DisplayMetrics.DENSITY_MEDIUM) {
-                child = createLine("Density DPI", "mdpi");
+                child = createLine(getString(R.string.density_dpi), getString(R.string.mdpi));
                 if (child != null) {
                     page.addView(child);
                 }
             } else if (densitydpi >= DisplayMetrics.DENSITY_LOW) {
-                child = createLine("Density DPI", "ldpi");
+                child = createLine(getString(R.string.density_dpi), getString(R.string.ldpi));
                 if (child != null) {
                     page.addView(child);
                 }
             } else {
-                child = createLine("Density DPI", "unacceptable");
+                child = createLine(getString(R.string.density_dpi), getString(R.string.unknown));
                 if (child != null) {
                     page.addView(child);
                 }
@@ -405,21 +429,21 @@ public class InfoActivity extends Activity {
         }
         float scaledDensity = this.getResources().getDisplayMetrics().scaledDensity;
         if (scaledDensity > 0) {
-            child = createLine("Scaled Density", String.valueOf(scaledDensity));
+            child = createLine(getString(R.string.scaled_density), String.valueOf(scaledDensity));
             if (child != null) {
                 page.addView(child);
             }
         }
         float xdpi = this.getResources().getDisplayMetrics().xdpi;
         if (xdpi > 0) {
-            child = createLine("XDPI", String.valueOf(xdpi));
+            child = createLine(getString(R.string.xdpi), String.valueOf(xdpi));
             if (child != null) {
                 page.addView(child);
             }
         }
         float ydpi = this.getResources().getDisplayMetrics().ydpi;
         if (ydpi > 0) {
-            child = createLine("YDPI", String.valueOf(ydpi));
+            child = createLine(getString(R.string.ydpi), String.valueOf(ydpi));
             if (child != null) {
                 page.addView(child);
             }
@@ -428,24 +452,24 @@ public class InfoActivity extends Activity {
 
     private void infoKernel() {
         View child = null;
-        page.addView(createHeader("Kernel"));
+        page.addView(createHeader(getString(R.string.kernel)));
         String bootloader = android.os.Build.BOOTLOADER;
         if (bootloader != null) {
-            child = createLine("Bootloader", bootloader);
+            child = createLine(getString(R.string.bootloader), bootloader);
             if (child != null) {
                 page.addView(child);
             }
         }
         String display = android.os.Build.DISPLAY;
         if (display != null) {
-            child = createLine("Display Version", display);
+            child = createLine(getString(R.string.display_version), display);
             if (child != null) {
                 page.addView(child);
             }
         }
         String fingerprint = android.os.Build.FINGERPRINT;
         if (fingerprint != null) {
-            child = createLine("Fingerprint", fingerprint);
+            child = createLine(getString(R.string.fingerprint), fingerprint);
             if (child != null) {
                 page.addView(child);
             }
@@ -453,14 +477,14 @@ public class InfoActivity extends Activity {
 
         String host = android.os.Build.HOST;
         if (host != null) {
-            child = createLine("Host", host);
+            child = createLine(getString(R.string.host), host);
             if (child != null) {
                 page.addView(child);
             }
         }
         String id = android.os.Build.ID;
         if (id != null) {
-            child = createLine("ID", id);
+            child = createLine(getString(R.string.id), id);
             if (child != null) {
                 page.addView(child);
             }
@@ -468,77 +492,77 @@ public class InfoActivity extends Activity {
 
         String serial = android.os.Build.SERIAL;
         if (serial != null) {
-            child = createLine("Serial", serial);
+            child = createLine(getString(R.string.serial), serial);
             if (child != null) {
                 page.addView(child);
             }
         }
         String tags = android.os.Build.TAGS;
         if (tags != null) {
-            child = createLine("TAGS", tags);
+            child = createLine(getString(R.string.tags), tags);
             if (child != null) {
                 page.addView(child);
             }
         }
         long time = android.os.Build.TIME;
         if (time > 0) {
-            child = createLine("Time", String.valueOf(time));
+            child = createLine(getString(R.string.time), String.valueOf(time));
             if (child != null) {
                 page.addView(child);
             }
         }
         String type = android.os.Build.TYPE;
         if (type != null) {
-            child = createLine("Type", type);
+            child = createLine(getString(R.string.type), type);
             if (child != null) {
                 page.addView(child);
             }
         }
         String unknown = android.os.Build.UNKNOWN;
         if (unknown != null) {
-            child = createLine("unknown", unknown);
+            child = createLine(getString(R.string.unknown), unknown);
             if (child != null) {
                 page.addView(child);
             }
         }
         String user = android.os.Build.USER;
         if (user != null) {
-            child = createLine("user", user);
+            child = createLine(getString(R.string.user), user);
             if (child != null) {
                 page.addView(child);
             }
         }
         String radioversion = android.os.Build.getRadioVersion();
         if (radioversion != null) {
-            child = createLine("Radioversion", radioversion);
+            child = createLine(getString(R.string.radioversion), radioversion);
             if (child != null) {
                 page.addView(child);
             }
         }
         String codename = android.os.Build.VERSION.CODENAME;
         if (codename != null) {
-            child = createLine("Codename", codename);
+            child = createLine(getString(R.string.codename), codename);
             if (child != null) {
                 page.addView(child);
             }
         }
         String incremental = android.os.Build.VERSION.INCREMENTAL;
         if (incremental != null) {
-            child = createLine("Incremental", incremental);
+            child = createLine(getString(R.string.incremental), incremental);
             if (child != null) {
                 page.addView(child);
             }
         }
         String release = android.os.Build.VERSION.RELEASE;
         if (release != null) {
-            child = createLine("Release", release);
+            child = createLine(getString(R.string.release), release);
             if (child != null) {
                 page.addView(child);
             }
         }
         int sdkInt = android.os.Build.VERSION.SDK_INT;
         if (sdkInt > 0) {
-            child = createLine("SDK INT", String.valueOf(sdkInt));
+            child = createLine(getString(R.string.sdk_int), String.valueOf(sdkInt));
             if (child != null) {
                 page.addView(child);
             }
@@ -548,66 +572,66 @@ public class InfoActivity extends Activity {
     private void infoCPU() {
         View child = null;
 
-        page.addView(createHeader("CPU/Hardware"));
+        page.addView(createHeader(getString(R.string.cpu_hardware)));
         String cpu_abi = android.os.Build.CPU_ABI;
         if (cpu_abi != null) {
-            child = createLine("CPU ABI", cpu_abi);
+            child = createLine(getString(R.string.cpu_abi), cpu_abi);
             if (child != null) {
                 page.addView(child);
             }
         }
         String cpu_abi2 = android.os.Build.CPU_ABI2;
         if (cpu_abi2 != null) {
-            child = createLine("CPU ABI2", cpu_abi2);
+            child = createLine(getString(R.string.cpu_abi2), cpu_abi2);
             if (child != null) {
                 page.addView(child);
             }
         }
         String board = android.os.Build.BOARD;
         if (board != null) {
-            child = createLine("Board", board);
+            child = createLine(getString(R.string.board), board);
             if (child != null) {
                 page.addView(child);
             }
         }
         String hardware = android.os.Build.HARDWARE;
         if (hardware != null) {
-            child = createLine("Hardware", hardware);
+            child = createLine(getString(R.string.hardware), hardware);
             if (child != null) {
                 page.addView(child);
             }
         }
         String manufacturer = android.os.Build.MANUFACTURER;
         if (manufacturer != null) {
-            child = createLine("Manufacturer", manufacturer);
+            child = createLine(getString(R.string.manufacturer), manufacturer);
             if (child != null) {
                 page.addView(child);
             }
         }
         String model = android.os.Build.MODEL;
         if (model != null) {
-            child = createLine("Model Name", model);
+            child = createLine(getString(R.string.model_name), model);
             if (child != null) {
                 page.addView(child);
             }
         }
         String device = android.os.Build.DEVICE;
         if (device != null) {
-            child = createLine("Device Name", device);
+            child = createLine(getString(R.string.device_name), device);
             if (child != null) {
                 page.addView(child);
             }
         }
         String product = android.os.Build.PRODUCT;
         if (product != null) {
-            child = createLine("Product Name", product);
+            child = createLine(getString(R.string.product_name), product);
             if (child != null) {
                 page.addView(child);
             }
         }
         String brand = android.os.Build.BRAND;
         if (brand != null) {
-            child = createLine("Brand", brand);
+            child = createLine(getString(R.string.brand), brand);
             if (child != null) {
                 page.addView(child);
             }
