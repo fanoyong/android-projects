@@ -1,7 +1,7 @@
 android-projects
 ================
 
-##- PhoneInfo
+##PhoneInfo
 
 * May 9th, 2013:
 
@@ -9,7 +9,7 @@ android-projects
 
     * Added refresh ActionItem to get the current state of the device
 
-    * '''VersionCode''': 2, '''VersionName''': 1.0.2013.509
+    * 'VersionCode': 2, 'VersionName': 1.0.2013.509
 
 * May 8th, 2013: Initial commit
 
