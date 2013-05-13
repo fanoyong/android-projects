@@ -3,7 +3,6 @@ package com.fanoyong.phoneinfo.ui;
 
 import java.util.List;
 
-import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.ActivityManager;
@@ -85,14 +84,16 @@ public class InfoActivity extends Activity {
 
         View child = null;
         this.page.addView(createHeader(getString(R.string.memory)));
-
-        long totalMem = mi.totalMem;
         int MB = 1024 * 1024;
-        if (totalMem > 0) {
-            child = createLine(getString(R.string.total_memory), String.valueOf(totalMem / MB)
-                    + " MB");
-            if (child != null) {
-                this.page.addView(child);
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            long totalMem = mi.totalMem;
+
+            if (totalMem > 0) {
+                child = createLine(getString(R.string.total_memory), String.valueOf(totalMem / MB)
+                        + " MB");
+                if (child != null) {
+                    this.page.addView(child);
+                }
             }
         }
         long availMem = mi.availMem;
@@ -602,11 +603,13 @@ public class InfoActivity extends Activity {
                 page.addView(child);
             }
         }
-        String radioversion = android.os.Build.getRadioVersion();
-        if (radioversion != null) {
-            child = createLine(getString(R.string.radioversion), radioversion);
-            if (child != null) {
-                page.addView(child);
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
+            String radioversion = android.os.Build.getRadioVersion();
+            if (radioversion != null) {
+                child = createLine(getString(R.string.radioversion), radioversion);
+                if (child != null) {
+                    page.addView(child);
+                }
             }
         }
         String codename = android.os.Build.VERSION.CODENAME;
@@ -728,7 +731,7 @@ public class InfoActivity extends Activity {
 
     }
 
-    @SuppressLint("NewApi")
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     private View createLine(String name, String content) {
         LinearLayout child = new LinearLayout(this);
         // child.setGravity(Gravity.CENTER);
@@ -750,7 +753,7 @@ public class InfoActivity extends Activity {
         TextView tv2 = new TextView(this);
         tv2.setText(content);
         tv2.setTextAppearance(this, R.style.textView);
-        if (android.os.Build.VERSION.SDK_INT > Build.VERSION_CODES.HONEYCOMB) {
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
             tv2.setTextIsSelectable(true);
         }
         // tv2.setGravity(Gravity.CENTER);
