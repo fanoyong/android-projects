@@ -1,5 +1,9 @@
 
-package com.fanoyong.aboutphone;
+package com.fanoyong.aboutphone.ui;
+
+import com.fanoyong.aboutphone.R;
+import com.fanoyong.aboutphone.R.id;
+import com.fanoyong.aboutphone.R.layout;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -17,7 +21,6 @@ public class ItemListActivity extends Activity implements ItemListFragment.Callb
             mTwoPane = true;
             ((ItemListFragment) getFragmentManager().findFragmentById(R.id.item_list)).setActivateOnItemClick(true);
         }
-        // TODO: If exposing deep links into your app, handle intents here.
     }
 
     @Override

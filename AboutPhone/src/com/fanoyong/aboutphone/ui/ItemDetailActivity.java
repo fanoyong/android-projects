@@ -1,5 +1,9 @@
 
-package com.fanoyong.aboutphone;
+package com.fanoyong.aboutphone.ui;
+
+import com.fanoyong.aboutphone.R;
+import com.fanoyong.aboutphone.R.id;
+import com.fanoyong.aboutphone.R.layout;
 
 import android.app.Activity;
 import android.content.Intent;
