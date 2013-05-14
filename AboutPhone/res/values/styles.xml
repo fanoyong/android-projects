@@ -1,6 +1,49 @@
-<resources>
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
 
     <style name="AppBaseTheme" parent="android:Theme.Light" />
+
     <style name="AppTheme" parent="AppBaseTheme" />
+
+    <style name="textView">
+        <item name="android:textSize">@dimen/textSizeDefault</item>
+        <item name="android:textColor">@color/textColorDefault</item>
+    </style>
+
+    <style name="textView.Cap">
+        <item name="android:textAllCaps" tools:targetApi="14">true</item>
+    </style>
+
+    <style name="textView.Big">
+        <item name="android:textSize">@dimen/textSizeBig</item>
+    </style>
+
+    <style name="textView.Big.Cap">
+        <item name="android:textAllCaps" tools:targetApi="14">true</item>
+    </style>
+
+    <style name="textView.Bigger">
+        <item name="android:textSize">@dimen/textSizeBigger</item>
+    </style>
+
+    <style name="textView.Bigger.Cap">
+        <item name="android:textAllCaps" tools:targetApi="14">true</item>
+    </style>
+
+    <style name="textView.Small">
+        <item name="android:textSize">@dimen/textSizeSmall</item>
+    </style>
+
+    <style name="textView.Small.Cap">
+        <item name="android:textAllCaps" tools:targetApi="14">true</item>
+    </style>
+
+    <style name="textView.Smaller">
+        <item name="android:textSize">@dimen/textSizeSmaller</item>
+    </style>
+
+    <style name="textView.Smaller.Cap">
+        <item name="android:textAllCaps" tools:targetApi="14">true</item>
+    </style>
 
 </resources>

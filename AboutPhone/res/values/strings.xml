@@ -2,6 +2,7 @@
 <resources>
 
     <string name="app_name">AboutPhone</string>
+    <string name="app_desc">AboutPhone provides information about your phone</string>
     <string name="title_item_detail">AboutPhone</string>
 
 </resources>
