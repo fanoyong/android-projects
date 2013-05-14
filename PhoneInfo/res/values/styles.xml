@@ -27,16 +27,8 @@
         <item name="android:textSize">@dimen/textSizeBig</item>
     </style>
 
-    <style name="textView.Big.Cap">
-        <item name="android:textAllCaps" tools:targetApi="14">true</item>
-    </style>
-
     <style name="textView.Bigger">
         <item name="android:textSize">@dimen/textSizeBigger</item>
-    </style>
-
-    <style name="textView.Bigger.Cap">
-        <item name="android:textAllCaps" tools:targetApi="14">true</item>
     </style>
 
     <style name="dynamic">

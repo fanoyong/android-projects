@@ -10,8 +10,6 @@ import android.widget.TextView;
 
 import com.fanoyong.aboutphone.Content;
 import com.fanoyong.aboutphone.R;
-import com.fanoyong.aboutphone.R.id;
-import com.fanoyong.aboutphone.R.layout;
 
 public class ItemDetailFragment extends Fragment {
     public static final String ARG_ITEM_ID = "item_id";

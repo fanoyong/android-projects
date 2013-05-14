@@ -711,6 +711,7 @@ public class InfoActivity extends Activity {
         }
     }
 
+    @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
     private View createHeader(String string) {
         LinearLayout child = new LinearLayout(this);
         child.setGravity(Gravity.CENTER);
@@ -725,7 +726,10 @@ public class InfoActivity extends Activity {
 
         TextView tv1 = new TextView(this);
         tv1.setText(string);
-        tv1.setTextAppearance(this, R.style.textView_Bigger_Cap);
+        tv1.setTextAppearance(this, R.style.textView_Bigger);
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
+            tv1.setAllCaps(true);
+        }
         child.addView(tv1, params);
         return child;
 

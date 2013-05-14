@@ -7,7 +7,6 @@
 
     <style name="textView">
         <item name="android:textSize">@dimen/textSizeDefault</item>
-        <item name="android:textColor">@color/textColorDefault</item>
     </style>
 
     <style name="textView.Cap">

@@ -1,14 +1,11 @@
 
 package com.fanoyong.aboutphone.ui;
 
-import com.fanoyong.aboutphone.R;
-import com.fanoyong.aboutphone.R.id;
-import com.fanoyong.aboutphone.R.layout;
-
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+
+import com.fanoyong.aboutphone.R;
 
 public class ItemDetailActivity extends Activity {
 
@@ -30,8 +27,6 @@ public class ItemDetailActivity extends Activity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                // NavUtils.navigateUpTo(this, new Intent(this,
-                // ItemListActivity.class));
                 return true;
         }
         return super.onOptionsItemSelected(item);

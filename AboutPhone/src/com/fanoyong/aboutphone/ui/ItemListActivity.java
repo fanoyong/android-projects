@@ -1,13 +1,11 @@
 
 package com.fanoyong.aboutphone.ui;
 
-import com.fanoyong.aboutphone.R;
-import com.fanoyong.aboutphone.R.id;
-import com.fanoyong.aboutphone.R.layout;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+
+import com.fanoyong.aboutphone.R;
 
 public class ItemListActivity extends Activity implements ItemListFragment.Callbacks {
 
