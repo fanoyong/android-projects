@@ -1,44 +1,59 @@
 
 package com.fanoyong.aboutphone;
 
-import com.fanoyong.aboutphone.Constants;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+
+import android.util.SparseArray;
+import android.view.View;
 
 public class Content {
 
-    public static List<Item> ITEMS = new ArrayList<Item>();
-    public static Map<Integer, Item> ITEM_MAP = new HashMap<Integer, Item>();
-
-    static {
-        addItem(new Item(Constants.INFO_CPU, "CPU/Hardware"));
-        addItem(new Item(Constants.INFO_KERNEL, "Kernel"));
-        addItem(new Item(Constants.INFO_DISPLAY, "Display"));
-        addItem(new Item(Constants.INFO_SENSORS, "Sensors"));
-        addItem(new Item(Constants.INFO_CONNECTIVITY, "Connectivity"));
-        addItem(new Item(Constants.INFO_TELEPHONY, "Telephony"));
-        addItem(new Item(Constants.SHOW_GPS, "GPS / Location"));
-    }
+    public static ArrayList<Item> ITEM_ARRAY = new ArrayList<Item>();
 
     private static void addItem(Item item) {
-        ITEMS.add(item);
-        ITEM_MAP.put(item.id, item);
+        ITEM_ARRAY.add(item);
+    }
+
+    static {
+        addItem(new Item(Constants.INFO_CPU));
+        addItem(new Item(Constants.INFO_KERNEL));
+        addItem(new Item(Constants.INFO_MEMORY));
+        addItem(new Item(Constants.INFO_DISPLAY));
+        addItem(new Item(Constants.INFO_SENSORS));
+        addItem(new Item(Constants.INFO_CONNECTIVITY));
+        addItem(new Item(Constants.INFO_TELEPHONY));
+        addItem(new Item(Constants.SHOW_GPS));
     }
 
     public static class Item {
-        public int id;
-        public String content;
+        private int type;
+        private View mView;
 
-        public Item(int id, String content) {
-            this.id = id;
-            this.content = content;
+        public Item(int id) {
+            this.setType(id);
+            mView = null;
         }
 
         @Override
         public String toString() {
-            return content;
+            return "Type: " + getType();
+        }
+
+        public View getmView() {
+            return mView;
+        }
+
+        public void setmView(View mView) {
+            this.mView = mView;
+        }
+
+        public int getType() {
+            return type;
+        }
+
+        public void setType(int type) {
+            this.type = type;
         }
     }
 }

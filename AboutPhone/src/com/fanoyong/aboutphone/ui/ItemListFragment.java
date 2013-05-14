@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.fanoyong.aboutphone.Content;
+import com.fanoyong.aboutphone.Content.Item;
 import com.fanoyong.aboutphone.R;
 
 public class ItemListFragment extends ListFragment {
@@ -18,12 +19,12 @@ public class ItemListFragment extends ListFragment {
     private int mActivatedPosition = ListView.INVALID_POSITION;
 
     public interface Callbacks {
-        public void onItemSelected(int id);
+        public void onItemSelected(int type);
     }
 
     private static Callbacks sCallbacks = new Callbacks() {
         @Override
-        public void onItemSelected(int id) {
+        public void onItemSelected(int type) {
         }
     };
 
@@ -33,7 +34,7 @@ public class ItemListFragment extends ListFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setListAdapter(new ArrayAdapter<Content.Item>(getActivity(), R.layout.list_item, R.id.text1, Content.ITEMS));
+        setListAdapter(new ArrayAdapter<Item>(getActivity(), R.layout.list_item, R.id.text1, Content.ITEM_ARRAY));
     }
 
     @Override
@@ -62,7 +63,7 @@ public class ItemListFragment extends ListFragment {
     @Override
     public void onListItemClick(ListView listView, View view, int position, long id) {
         super.onListItemClick(listView, view, position, id);
-        mCallbacks.onItemSelected(Content.ITEMS.get(position).id);
+        mCallbacks.onItemSelected(Content.ITEM_ARRAY.get(position).getType());
     }
 
     @Override

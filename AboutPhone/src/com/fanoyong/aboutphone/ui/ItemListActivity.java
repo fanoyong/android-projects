@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.fanoyong.aboutphone.Constants;
 import com.fanoyong.aboutphone.R;
 
 public class ItemListActivity extends Activity implements ItemListFragment.Callbacks {
@@ -22,16 +23,16 @@ public class ItemListActivity extends Activity implements ItemListFragment.Callb
     }
 
     @Override
-    public void onItemSelected(int id) {
+    public void onItemSelected(int type) {
         if (mTwoPane) {
             Bundle arguments = new Bundle();
-            arguments.putInt(ItemDetailFragment.ARG_ITEM_ID, id);
+            arguments.putInt(Constants.ARG_ITEM_TYPE, type);
             ItemDetailFragment fragment = new ItemDetailFragment();
             fragment.setArguments(arguments);
             getFragmentManager().beginTransaction().replace(R.id.item_detail_container, fragment).commit();
         } else {
             Intent detailIntent = new Intent(this, ItemDetailActivity.class);
-            detailIntent.putExtra(ItemDetailFragment.ARG_ITEM_ID, id);
+            detailIntent.putExtra(Constants.ARG_ITEM_TYPE, type);
             startActivity(detailIntent);
         }
     }

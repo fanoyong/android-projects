@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+<resources>
 
-    <style name="AppBaseTheme" parent="android:Theme.Light" />
+    <style name="AppBaseTheme" parent="android:Theme.Holo.Light" />
 
     <style name="AppTheme" parent="AppBaseTheme" />
 
@@ -10,7 +10,7 @@
     </style>
 
     <style name="textView.Cap">
-        <item name="android:textAllCaps" tools:targetApi="14">true</item>
+        <item name="android:textAllCaps">true</item>
     </style>
 
     <style name="textView.Big">
@@ -18,7 +18,7 @@
     </style>
 
     <style name="textView.Big.Cap">
-        <item name="android:textAllCaps" tools:targetApi="14">true</item>
+        <item name="android:textAllCaps">true</item>
     </style>
 
     <style name="textView.Bigger">
@@ -26,7 +26,7 @@
     </style>
 
     <style name="textView.Bigger.Cap">
-        <item name="android:textAllCaps" tools:targetApi="14">true</item>
+        <item name="android:textAllCaps">true</item>
     </style>
 
     <style name="textView.Small">
@@ -34,7 +34,7 @@
     </style>
 
     <style name="textView.Small.Cap">
-        <item name="android:textAllCaps" tools:targetApi="14">true</item>
+        <item name="android:textAllCaps">true</item>
     </style>
 
     <style name="textView.Smaller">
@@ -42,7 +42,7 @@
     </style>
 
     <style name="textView.Smaller.Cap">
-        <item name="android:textAllCaps" tools:targetApi="14">true</item>
+        <item name="android:textAllCaps">true</item>
     </style>
 
 </resources>
