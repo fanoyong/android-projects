@@ -1,6 +1,7 @@
 
 package com.fanoyong.aboutphone.ui;
 
+import android.annotation.TargetApi;
 import android.app.Fragment;
 import android.os.Build;
 import android.os.Bundle;
@@ -9,10 +10,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.LinearLayout.LayoutParams;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.LinearLayout.LayoutParams;
-
 import com.fanoyong.aboutphone.Constants;
 import com.fanoyong.aboutphone.Content;
 import com.fanoyong.aboutphone.Content.Item;
@@ -34,6 +34,7 @@ public class ItemDetailFragment extends Fragment {
         }
     }
 
+    @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_item_detail, container, false);
@@ -64,8 +65,12 @@ public class ItemDetailFragment extends Fragment {
                     TextView tv1 = new TextView(lv.getContext());
                     tv1.setText("Test");
                     tv1.setTextAppearance(lv.getContext(), R.style.textView_Bigger);
-                    tv1.setAllCaps(true);
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
+                        tv1.setAllCaps(true);
+                    }
                     sv.addView(tv1, params);
+                    mItem.setmView(sv);
+                    mItem.setmView(sv);
                     break;
             }
         }

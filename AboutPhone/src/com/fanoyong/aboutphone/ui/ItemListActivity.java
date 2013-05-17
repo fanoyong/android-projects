@@ -4,7 +4,6 @@ package com.fanoyong.aboutphone.ui;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-
 import com.fanoyong.aboutphone.Constants;
 import com.fanoyong.aboutphone.R;
 

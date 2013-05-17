@@ -1,11 +1,9 @@
 
 package com.fanoyong.aboutphone;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import android.util.SparseArray;
 import android.view.View;
+
+import java.util.ArrayList;
 
 public class Content {
 
@@ -28,24 +26,14 @@ public class Content {
 
     public static class Item {
         private int type;
-        private View mView;
 
         public Item(int id) {
             this.setType(id);
-            mView = null;
         }
 
         @Override
         public String toString() {
             return "Type: " + getType();
-        }
-
-        public View getmView() {
-            return mView;
-        }
-
-        public void setmView(View mView) {
-            this.mView = mView;
         }
 
         public int getType() {

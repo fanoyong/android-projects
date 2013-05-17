@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-
 import com.fanoyong.aboutphone.Content;
 import com.fanoyong.aboutphone.Content.Item;
 import com.fanoyong.aboutphone.R;
