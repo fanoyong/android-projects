@@ -2,6 +2,13 @@ android-projects
 ================
 
 ##PhoneInfo
+* May 15th, 2013:
+
+    * Fix API specific errors
+
+    * Modified dimensions
+
+    * 'VersionCode': 3, 'VerionName': 1.0.2013.515
 
 * May 9th, 2013:
 
@@ -13,3 +20,11 @@ android-projects
 
 * May 8th, 2013: Initial commit
 
+##AboutPhone
+* May 20th, 2013
+
+    * Initial skeleton
+
+    * Added gradle build configuration for AndroidStudio
+
+    * 'VersionCode': 1, 'VersionName': 1.0.2013.520
