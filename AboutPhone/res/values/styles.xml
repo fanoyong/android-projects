@@ -45,4 +45,15 @@
         <item name="android:textAllCaps">true</item>
     </style>
 
+    <style name="default_base_theme" parent="android:Theme.Holo" />
+
+    <style name="default_theme" parent="default_base_theme" />
+
+    <style name="container">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_marginTop">@dimen/margin_default</item>
+        <item name="android:layout_marginBottom">@dimen/margin_default</item>
+    </style>
+
 </resources>

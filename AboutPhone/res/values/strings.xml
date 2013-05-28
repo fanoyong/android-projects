@@ -4,5 +4,111 @@
     <string name="app_name">AboutPhone</string>
     <string name="app_desc">AboutPhone provides information about your phone</string>
     <string name="title_item_detail">AboutPhone</string>
+    <string name="telephoney">Telephoney</string>
+    <string name="device_sw_version">Device SW Version</string>
+    <string name="device_id">Device ID</string>
+    <string name="dormant">Dormant</string>
+    <string name="in">In</string>
+    <string name="in_out">In / Out</string>
+    <string name="none">None</string>
+    <string name="out">Out</string>
+    <string name="data_activity">Data Activity</string>
+    <string name="connected">Connected</string>
+    <string name="connecting">Connecting</string>
+    <string name="disconnected">Disconnected</string>
+    <string name="suspended">Suspended</string>
+    <string name="data_state">Data State</string>
+    <string name="cdma" translatable="false">CDMA</string>
+    <string name="gsm" translatable="false">GSM</string>
+    <string name="sip" translatable="false">SIP</string>
+    <string name="phone_type">Phone type</string>
+    <string name="_1xrtt" translatable="false">1xRTT</string>
+    <string name="edge" translatable="false">EDGE</string>
+    <string name="ehrpd" translatable="false">eHRPD</string>
+    <string name="evdo_0" translatable="false">EVDO 0</string>
+    <string name="evdo_a" translatable="false">EVDO A</string>
+    <string name="evdo_b" translatable="false">EVDO B</string>
+    <string name="gprs" translatable="false">GPRS</string>
+    <string name="hsdpa" translatable="false">HSDPA</string>
+    <string name="hspa" translatable="false">HSPA</string>
+    <string name="hspap" translatable="false">HSPAP</string>
+    <string name="hsupa" translatable="false">HSUPA</string>
+    <string name="iden" translatable="false">IDEN</string>
+    <string name="lte" translatable="false">LTE</string>
+    <string name="umts" translatable="false">UMTS</string>
+    <string name="unknown">unknown</string>
+    <string name="network_type">Network type</string>
+    <string name="network_operator">Network Operator</string>
+    <string name="network_operator_name">Network Operator Name</string>
+    <string name="network_country_iso">Network country ISO</string>
+    <string name="subscriber_id">Subscriber ID</string>
+    <string name="sim_country_iso">SIM Country ISO</string>
+    <string name="state_absent">State Absent</string>
+    <string name="network_locked">Network Locked</string>
+    <string name="pin_required">PIN Required</string>
+    <string name="puk_required">PUK Required</string>
+    <string name="ready">Ready</string>
+    <string name="sim_state">SIM State</string>
+    <string name="sim_serial_number">SIM Serial Number</string>
+    <string name="sim_operator">SIM Operator</string>
+    <string name="sim_operator_name">SIM Operator name</string>
+    <string name="voicemail_alpha_tag">VoiceMail Alpha TAG</string>
+    <string name="voicemail_number">VoiceMail Number</string>
+    <string name="connectivity">Connectivity</string>
+    <string name="subtype">Subtype</string>
+    <string name="state">State</string>
+    <string name="reason">Reason</string>
+    <string name="extrainfo">Extra Info</string>
+    <string name="type">Type</string>
+    <string name="version">Version</string>
+    <string name="vendor">Vendor</string>
+    <string name="power">Power</string>
+    <string name="mindelay">Minimum Delay</string>
+    <string name="maxrange">Maximum Range</string>
+    <string name="resolution">Resolution</string>
+    <string name="sensors">Sensors</string>
+    <string name="display">Display</string>
+    <string name="width">Width</string>
+    <string name="height">Height</string>
+    <string name="density">Density</string>
+    <string name="density_dpi">Density DPI</string>
+    <string name="xxhdpi" translatable="false">xxhdpi</string>
+    <string name="xhdpi" translatable="false">xhdpi</string>
+    <string name="hdpi" translatable="false">hdpi</string>
+    <string name="mdpi" translatable="false">mdpi</string>
+    <string name="ldpi" translatable="false">ldpi</string>
+    <string name="scaled_density">Scaled Density</string>
+    <string name="xdpi">XDPI</string>
+    <string name="ydpi">YDPI</string>
+    <string name="kernel">Kernel</string>
+    <string name="bootloader">Bootloader</string>
+    <string name="display_version">Display Version</string>
+    <string name="fingerprint">Fingerprint</string>
+    <string name="host">Host</string>
+    <string name="id">ID</string>
+    <string name="serial">Serial Number</string>
+    <string name="tags">TAGS</string>
+    <string name="time">Time</string>
+    <string name="user">user</string>
+    <string name="radioversion">Radio version</string>
+    <string name="codename">Code name</string>
+    <string name="incremental">Incremental Version</string>
+    <string name="release">Release</string>
+    <string name="sdk_int">SDK LEVEL</string>
+    <string name="cpu_hardware">CPU/Hardware</string>
+    <string name="cpu_abi" translatable="false">CPU ABI</string>
+    <string name="cpu_abi2" translatable="false">CPU ABI2</string>
+    <string name="board">Board</string>
+    <string name="hardware">Hardware</string>
+    <string name="manufacturer">Manufacturer</string>
+    <string name="model_name">Model Name</string>
+    <string name="device_name">Device Name</string>
+    <string name="product_name">Product Name</string>
+    <string name="brand">Brand</string>
+    <string name="memory">Memory</string>
+    <string name="total_memory">Total Memory</string>
+    <string name="available_memory">Available Memory</string>
+    <string name="low_memory_threshold">Low Memory Threshold</string>
+    <string name="refresh">Refresh</string>
 
 </resources>

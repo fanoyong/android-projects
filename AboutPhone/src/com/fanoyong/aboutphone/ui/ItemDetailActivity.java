@@ -15,6 +15,7 @@ public class ItemDetailActivity extends Activity {
         setContentView(R.layout.activity_item_detail);
         getActionBar().setDisplayHomeAsUpEnabled(true);
         if (savedInstanceState == null) {
+
             Bundle arguments = new Bundle();
             arguments.putInt(Constants.ARG_ITEM_TYPE, getIntent().getIntExtra(Constants.ARG_ITEM_TYPE, Constants.NONE));
             ItemDetailFragment fragment = new ItemDetailFragment();
