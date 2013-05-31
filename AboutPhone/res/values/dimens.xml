@@ -15,5 +15,6 @@
     <dimen name="subtitle_font_size">17sp</dimen>
     <dimen name="screen_description_font_size">17sp</dimen>
     <dimen name="name_width">120dp</dimen>
+    <dimen name="button_size">48dp</dimen>
 
 </resources>

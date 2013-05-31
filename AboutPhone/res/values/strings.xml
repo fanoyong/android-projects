@@ -4,7 +4,7 @@
     <string name="app_name">AboutPhone</string>
     <string name="app_desc">AboutPhone provides information about your phone</string>
     <string name="title_item_detail">AboutPhone</string>
-    <string name="telephoney">Telephoney</string>
+    <string name="telephony">Telephony</string>
     <string name="device_sw_version">Device SW Version</string>
     <string name="device_id">Device ID</string>
     <string name="dormant">Dormant</string>
@@ -110,5 +110,8 @@
     <string name="available_memory">Available Memory</string>
     <string name="low_memory_threshold">Low Memory Threshold</string>
     <string name="refresh">Refresh</string>
+    <string name="welcome">Welcome</string>
+    <string name="empty">Empty</string>
+    <string name="location">Location</string>
 
 </resources>
