@@ -8,7 +8,7 @@ android-projects
 
     * Modified dimensions
 
-    * 'VersionCode': 3, 'VerionName': 1.0.2013.515
+    * `VersionCode`: 3, `VerionName`: 1.0.2013.515
 
 * May 9th, 2013:
 
@@ -16,7 +16,7 @@ android-projects
 
     * Added refresh ActionItem to get the current state of the device
 
-    * 'VersionCode': 2, 'VersionName': 1.0.2013.509
+    * `VersionCode`: 2, `VersionName`: 1.0.2013.509
 
 * May 8th, 2013: Initial commit
 
@@ -29,12 +29,12 @@ android-projects
 
     * Added gradle build configuration for AndroidStudio
 
-    * 'VersionCode': 1, 'VersionName': 1.0.2013.603
+    * `VersionCode`: 1, `VersionName`: 1.0.2013.603
 
 ##ActivityLifeCycle
 * June 3rd, 2013
 
     * Simple test application with normal activity life cycle
 
-    * For logging, use '\$ adb logcat \| grep -nR \'ActivityLifeCycle\''
+    * For logging, use `\$ adb logcat \| grep -nR \'ActivityLifeCycle\'`
 
