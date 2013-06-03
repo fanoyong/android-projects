@@ -1,60 +1,87 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/fragment_list"
     style="?android:attr/textAppearanceLarge"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:textIsSelectable="true"
-    android:orientation="vertical"
     tools:context=".ListFragment" >
 
-    <ImageView
-        android:id="@+id/btn_hardware"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/cpu_hardware"
-        android:src="@drawable/ic_hardware" />
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical" >
 
-    <ImageView
-        android:id="@+id/btn_kernel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/kernel"
-        android:src="@drawable/ic_kernel" />
+        <ImageView
+            android:id="@+id/btn_hardware"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/margin_default"
+            android:layout_marginTop="@dimen/margin_default"
+            android:contentDescription="@string/cpu_hardware"
+            android:src="@drawable/ic_hardware" />
 
-    <ImageView
-        android:id="@+id/btn_display"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/display"
-        android:src="@drawable/ic_display" />
+        <ImageView
+            android:id="@+id/btn_kernel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/margin_default"
+            android:layout_marginTop="@dimen/margin_default"
+            android:contentDescription="@string/kernel"
+            android:src="@drawable/ic_kernel" />
 
-    <ImageView
-        android:id="@+id/btn_sensors"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/sensors"
-        android:src="@drawable/ic_sensors" />
+        <ImageView
+            android:id="@+id/btn_display"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/margin_default"
+            android:layout_marginTop="@dimen/margin_default"
+            android:contentDescription="@string/display"
+            android:src="@drawable/ic_display" />
 
-    <ImageView
-        android:id="@+id/btn_connectivity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/connectivity"
-        android:src="@drawable/ic_connectivity" />
+        <ImageView
+            android:id="@+id/btn_sensors"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/margin_default"
+            android:layout_marginTop="@dimen/margin_default"
+            android:contentDescription="@string/sensors"
+            android:src="@drawable/ic_sensors" />
 
-    <ImageView
-        android:id="@+id/btn_telephony"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/telephony"
-        android:src="@drawable/ic_telephony" />
+        <ImageView
+            android:id="@+id/btn_connectivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/margin_default"
+            android:layout_marginTop="@dimen/margin_default"
+            android:contentDescription="@string/connectivity"
+            android:src="@drawable/ic_connectivity" />
 
-    <ImageView
-        android:id="@+id/btn_location"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/location"
-        android:src="@drawable/ic_location" />
+        <ImageView
+            android:id="@+id/btn_telephony"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/margin_default"
+            android:layout_marginTop="@dimen/margin_default"
+            android:contentDescription="@string/telephony"
+            android:src="@drawable/ic_telephony" />
 
-</LinearLayout>
+        <ImageView
+            android:id="@+id/btn_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/margin_default"
+            android:layout_marginTop="@dimen/margin_default"
+            android:contentDescription="@string/location"
+            android:src="@drawable/ic_location" />
+    </LinearLayout>
+
+</ScrollView>

@@ -66,4 +66,12 @@
         <item name="android:layout_height">@dimen/button_size</item>
     </style>
 
+    <style name="imageButtonStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/margin_default</item>
+        <item name="android:layout_marginTop">@dimen/margin_default</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
 </resources>

@@ -17,18 +17,16 @@ public class MainActivity extends Activity {
         Log.v(TAG + "onCreate|", "start");
         this.setContentView(R.layout.activity_twopane);
         replaceFragment();
-
         Log.v(TAG + "onCreate|", "end");
     }
 
     private void replaceFragment() {
         Log.v(TAG + "replaceFragment|", "start");
-        ListFragment mListFragment = new ListFragment();
-        DetailFragment mDetailFragment = new DetailFragment();
+        ListFragment mListFragment = (ListFragment) this.getFragmentManager().findFragmentById(R.id.list_fragment);
+        DetailFragment mDetailFragment = (DetailFragment) this.getFragmentManager().findFragmentById(R.id.detail_fragment);
         this.getFragmentManager().beginTransaction().replace(R.id.list_fragment, mListFragment).commit();
         this.getFragmentManager().beginTransaction().replace(R.id.detail_fragment, mDetailFragment).commit();
         Log.v(TAG + "replaceFragment|", "end");
-
     }
 
     @Override
