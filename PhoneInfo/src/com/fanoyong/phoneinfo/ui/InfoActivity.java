@@ -7,8 +7,11 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.ActivityManager.MemoryInfo;
+import android.content.Context;
 import android.graphics.Color;
 import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -27,18 +30,38 @@ import android.widget.TextView;
 
 import com.fanoyong.phoneinfo.R;
 
-public class InfoActivity extends Activity {
+public class InfoActivity extends Activity implements SensorEventListener {
     private LinearLayout page;
+    SensorManager mSensorManager;
+    Sensor mTemperature;
+    float temperature;
+    Sensor mPressure;
+    float pressure;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        mPressure = mSensorManager.getDefaultSensor(Sensor.TYPE_PRESSURE);
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
+            mTemperature = mSensorManager.getDefaultSensor(Sensor.TYPE_AMBIENT_TEMPERATURE);
+        } else {
+            mTemperature = mSensorManager.getDefaultSensor(Sensor.TYPE_TEMPERATURE);
+        }
+        mSensorManager.registerListener(this, mPressure, SensorManager.SENSOR_DELAY_FASTEST);
+        mSensorManager.registerListener(this, mTemperature, SensorManager.SENSOR_DELAY_FASTEST);
         setContentView(R.layout.activity_info);
         LinearLayout infoContainer = (LinearLayout) this.findViewById(R.id.InfoContainer);
         this.page = new LinearLayout(this);
         getInfo();
         infoContainer.removeAllViews();
         infoContainer.addView(this.page);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mSensorManager.unregisterListener(this);
     }
 
     @Override
@@ -416,8 +439,7 @@ public class InfoActivity extends Activity {
     private void infoSensors() {
         View child = null;
         page.addView(createHeader(getString(R.string.sensors)));
-        SensorManager sm = (SensorManager) this.getSystemService(SENSOR_SERVICE);
-        List<Sensor> sensors = sm.getSensorList(Sensor.TYPE_ALL);
+        List<Sensor> sensors = mSensorManager.getSensorList(Sensor.TYPE_ALL);
         StringBuilder sb = new StringBuilder();
         for (Sensor sensor : sensors) {
             sb.setLength(0);
@@ -433,6 +455,15 @@ public class InfoActivity extends Activity {
                 page.addView(child);
             }
         }
+        child = createLine("Temperature: ", String.valueOf(temperature));
+        if (child != null) {
+            page.addView(child);
+        }
+        child = createLine("Pressure: ", String.valueOf(pressure));
+        if (child != null) {
+            page.addView(child);
+        }
+
     }
 
     private void infoDisplay() {
@@ -764,5 +795,22 @@ public class InfoActivity extends Activity {
         child.addView(tv1, params);
         child.addView(tv2, params);
         return child;
+    }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int accuracy) {
+    }
+
+    @Override
+    public void onSensorChanged(SensorEvent event) {
+        if (event.sensor.getType() == Sensor.TYPE_AMBIENT_TEMPERATURE
+                || event.sensor.getType() == Sensor.TYPE_TEMPERATURE) {
+            this.temperature = event.values[0];
+        }
+        Sensor.ty
+        if (event.sensor.getType() == Sensor.TYPE_PRESSURE) {
+            this.pressure = event.values[0];
+        }
+
     }
 }
