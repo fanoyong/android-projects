@@ -10,4 +10,5 @@ public class Constants {
     public static final int INFO_CONNECTIVITY = 5;
     public static final int INFO_TELEPHONY = 6;
     public static final int SHOW_GPS = 7;
+    public static final String TYPE = "DetailType";
 }

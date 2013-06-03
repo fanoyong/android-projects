@@ -17,58 +17,54 @@ import com.fanoyong.aboutphone.R;
 public class ListFragment extends Fragment {
 
     private static final String TAG = "AP|ListFragment|";
-    private static OnClickListener mOnClickListener;
-
-    static {
-        mOnClickListener = new OnClickListener() {
-            @Override
-            public void onClick(View mView) {
-                int mType = Constants.NONE;
-                switch (mView.getId()) {
-                    case R.id.btn_hardware:
-                        Log.v(TAG + "onCreateView|onClick|", "Hardware clicked.");
-                        mType = Constants.INFO_CPU;
-                        break;
-                    case R.id.btn_kernel:
-                        Log.v(TAG + "onCreateView|onClick|", "Kernel clicked.");
-                        mType = Constants.INFO_KERNEL;
-                        break;
-                    case R.id.btn_display:
-                        Log.v(TAG + "onCreateView|onClick|", "Display clicked.");
-                        mType = Constants.INFO_DISPLAY;
-                        break;
-                    case R.id.btn_sensors:
-                        Log.v(TAG + "onCreateView|onClick|", "Sensors clicked.");
-                        mType = Constants.INFO_SENSORS;
-                        break;
-                    case R.id.btn_connectivity:
-                        Log.v(TAG + "onCreateView|onClick|", "Connectivity clicked.");
-                        mType = Constants.INFO_CONNECTIVITY;
-                        break;
-                    case R.id.btn_telephony:
-                        Log.v(TAG + "onCreateView|onClick|", "Telephony clicked.");
-                        mType = Constants.INFO_TELEPHONY;
-                        break;
-                    case R.id.btn_location:
-                        Log.v(TAG + "onCreateView|onClick|", "Location clicked.");
-                        mType = Constants.SHOW_GPS;
-                        break;
-                    default:
-                        Log.v(TAG + "onCreateView|onClick|", "Not belong to anything.");
-                        mType = Constants.NONE;
-                        break;
-                }
-                try {
-                    if (Integer.valueOf(mType) != null) {
-                        displayDetail(mType);
-                    }
-                } catch (NumberFormatException e) {
-                    e.printStackTrace();
-                    Log.e(TAG, "Something wrong with button.");
-                }
+    private OnClickListener mOnClickListener = new OnClickListener() {
+        @Override
+        public void onClick(View mView) {
+            int mType = Constants.NONE;
+            switch (mView.getId()) {
+                case R.id.btn_hardware:
+                    Log.v(TAG + "onCreateView|onClick|", "Hardware clicked.");
+                    mType = Constants.INFO_CPU;
+                    break;
+                case R.id.btn_kernel:
+                    Log.v(TAG + "onCreateView|onClick|", "Kernel clicked.");
+                    mType = Constants.INFO_KERNEL;
+                    break;
+                case R.id.btn_display:
+                    Log.v(TAG + "onCreateView|onClick|", "Display clicked.");
+                    mType = Constants.INFO_DISPLAY;
+                    break;
+                case R.id.btn_sensors:
+                    Log.v(TAG + "onCreateView|onClick|", "Sensors clicked.");
+                    mType = Constants.INFO_SENSORS;
+                    break;
+                case R.id.btn_connectivity:
+                    Log.v(TAG + "onCreateView|onClick|", "Connectivity clicked.");
+                    mType = Constants.INFO_CONNECTIVITY;
+                    break;
+                case R.id.btn_telephony:
+                    Log.v(TAG + "onCreateView|onClick|", "Telephony clicked.");
+                    mType = Constants.INFO_TELEPHONY;
+                    break;
+                case R.id.btn_location:
+                    Log.v(TAG + "onCreateView|onClick|", "Location clicked.");
+                    mType = Constants.SHOW_GPS;
+                    break;
+                default:
+                    Log.v(TAG + "onCreateView|onClick|", "Not belong to anything.");
+                    mType = Constants.NONE;
+                    break;
             }
-        };
-    }
+            try {
+                if (Integer.valueOf(mType) != null) {
+                    displayDetail(mType);
+                }
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+                Log.e(TAG, "Something wrong with button.");
+            }
+        }
+    };
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -77,8 +73,13 @@ public class ListFragment extends Fragment {
         Log.v(TAG + "onCreate|", "end");
     }
 
-    protected static void displayDetail(int mType) {
+    public void displayDetail(int mType) {
         Log.v(TAG + "displayDetail|", "start with type: " + mType);
+        Bundle arguments = new Bundle();
+        arguments.putInt(Constants.TYPE, mType);
+        DetailFragment mDetailFragment = new DetailFragment();
+        mDetailFragment.setArguments(arguments);
+        this.getFragmentManager().beginTransaction().replace(R.id.detail_fragment, mDetailFragment).commit();
         Log.v(TAG + "displayDetail|", "end");
     }
 
