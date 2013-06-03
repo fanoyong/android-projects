@@ -36,5 +36,5 @@ android-projects
 
     * Simple test application with normal activity life cycle
 
-    * For logging, use `\$ adb logcat \| grep -nR \'ActivityLifeCycle\'`
+    * For logging, use `$ adb logcat | grep -nR 'ActivityLifeCycle'`
 
