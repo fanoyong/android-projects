@@ -21,10 +21,20 @@ android-projects
 * May 8th, 2013: Initial commit
 
 ##AboutPhone
-* May 20th, 2013
+*  June 3rd, 2013
+
+    * Re-designing from the scratch
 
     * Initial skeleton
 
     * Added gradle build configuration for AndroidStudio
 
-    * 'VersionCode': 1, 'VersionName': 1.0.2013.520
+    * 'VersionCode': 1, 'VersionName': 1.0.2013.603
+
+##ActivityLifeCycle
+* June 3rd, 2013
+
+    * Simple test application with normal activity life cycle
+
+    * For logging, use '\$ adb logcat \| grep -nR \'ActivityLifeCycle\''
+
