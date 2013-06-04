@@ -32,7 +32,9 @@ android-projects
     * `VersionCode`: 1, `VersionName`: 1.0.2013.603
 
 ##ActivityLifeCycle
-* June 3rd, 2013
+* June 4th, 2013
+
+    * Now it shows `onConfigurationChanged()` with sequences
 
     * Simple test application with normal activity life cycle
 
