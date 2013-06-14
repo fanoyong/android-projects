@@ -1,11 +1,11 @@
 
 package com.fanoyong.aboutphone.ui;
 
-import com.fanoyong.aboutphone.R;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
+
+import com.fanoyong.aboutphone.R;
 
 public class MainActivity extends Activity {
 

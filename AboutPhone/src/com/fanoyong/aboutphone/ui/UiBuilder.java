@@ -24,7 +24,6 @@ import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 
 import com.fanoyong.aboutphone.R;
-
 public class UiBuilder {
 
     private static final String TAG = "AP|UiBuilder|";

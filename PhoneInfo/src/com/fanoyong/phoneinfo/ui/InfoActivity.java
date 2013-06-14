@@ -807,7 +807,6 @@ public class InfoActivity extends Activity implements SensorEventListener {
                 || event.sensor.getType() == Sensor.TYPE_TEMPERATURE) {
             this.temperature = event.values[0];
         }
-        Sensor.ty
         if (event.sensor.getType() == Sensor.TYPE_PRESSURE) {
             this.pressure = event.values[0];
         }
